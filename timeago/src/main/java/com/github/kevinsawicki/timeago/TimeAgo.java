@@ -155,7 +155,7 @@ public class TimeAgo {
 		else
 			time = MessageFormat.format(this.years, Math.floor(years));
 
-		return join(prefix, time, suffix);
+		return join(suffix, time, prefix);
 	}
 
 	/**

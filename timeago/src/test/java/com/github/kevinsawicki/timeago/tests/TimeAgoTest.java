@@ -73,8 +73,7 @@ public class TimeAgoTest extends TestCase {
 	public void testAgoSeconds() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(System.currentTimeMillis());
-		String expected = ago.join(ago.getPrefixAgo(), ago.getSeconds(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getSeconds(), ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -84,8 +83,7 @@ public class TimeAgoTest extends TestCase {
 	public void testAgoMinute() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(ago(MINUTE));
-		String expected = ago.join(ago.getPrefixAgo(), ago.getMinute(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getMinute(), ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -96,9 +94,7 @@ public class TimeAgoTest extends TestCase {
 		TimeAgo ago = new TimeAgo();
 		int minutes = 2;
 		String time = ago.timeAgo(ago(minutes * MINUTE));
-		String expected = ago.join(ago.getPrefixAgo(),
-				MessageFormat.format(ago.getMinutes(), minutes),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), MessageFormat.format(ago.getMinutes(), minutes), ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -108,8 +104,8 @@ public class TimeAgoTest extends TestCase {
 	public void testAgoHour() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(ago(HOUR));
-		String expected = ago.join(ago.getPrefixAgo(), ago.getHour(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getHour(),
+				ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -121,9 +117,9 @@ public class TimeAgoTest extends TestCase {
 		long hours = 3;
 		String time = ago.timeAgo(ago(hours * HOUR));
 		String expected = ago
-				.join(ago.getPrefixAgo(),
+				.join(ago.getSuffixAgo(),
 						MessageFormat.format(ago.getHours(), hours),
-						ago.getSuffixAgo());
+						ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -133,8 +129,8 @@ public class TimeAgoTest extends TestCase {
 	public void testAgoDay() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(ago(30 * HOUR));
-		String expected = ago.join(ago.getPrefixAgo(), ago.getDay(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getDay(),
+				ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -145,8 +141,8 @@ public class TimeAgoTest extends TestCase {
 		TimeAgo ago = new TimeAgo();
 		long days = 4;
 		String time = ago.timeAgo(ago(days * DAY));
-		String expected = ago.join(ago.getPrefixAgo(),
-				MessageFormat.format(ago.getDays(), days), ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(),
+				MessageFormat.format(ago.getDays(), days), ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -156,8 +152,8 @@ public class TimeAgoTest extends TestCase {
 	public void testAgoMonth() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(ago(35 * DAY));
-		String expected = ago.join(ago.getPrefixAgo(), ago.getMonth(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getMonth(),
+				ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -168,9 +164,9 @@ public class TimeAgoTest extends TestCase {
 		TimeAgo ago = new TimeAgo();
 		long months = 2;
 		String time = ago.timeAgo(ago(months * MONTH));
-		String expected = ago.join(ago.getPrefixAgo(),
+		String expected = ago.join(ago.getSuffixAgo(),
 				MessageFormat.format(ago.getMonths(), months),
-				ago.getSuffixAgo());
+				ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -180,8 +176,8 @@ public class TimeAgoTest extends TestCase {
 	public void testYearAgo() {
 		TimeAgo ago = new TimeAgo();
 		String time = ago.timeAgo(System.currentTimeMillis() - (14 * MONTH));
-		String expected = ago.join(ago.getPrefixAgo(), ago.getYear(),
-				ago.getSuffixAgo());
+		String expected = ago.join(ago.getSuffixAgo(), ago.getYear(),
+				ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 
@@ -193,9 +189,9 @@ public class TimeAgoTest extends TestCase {
 		long years = 7;
 		String time = ago.timeAgo(System.currentTimeMillis() - (years * YEAR));
 		String expected = ago
-				.join(ago.getPrefixAgo(),
+				.join(ago.getSuffixAgo(),
 						MessageFormat.format(ago.getYears(), years),
-						ago.getSuffixAgo());
+						ago.getPrefixAgo());
 		assertEquals(expected, time);
 	}
 }
